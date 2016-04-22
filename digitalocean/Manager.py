@@ -122,6 +122,13 @@ class Manager(BaseAPI):
             Return a Droplet by its ID.
         """
         return Droplet.get_object(api_token=self.token, droplet_id=droplet_id)
+  
+    def get_droplet_by_name(self, name):
+        droplets = self.get_all_droplets()
+        for droplet in droplets:
+            if name == droplet.name:
+                return droplet
+        return None
 
     def get_all_sizes(self):
         """
