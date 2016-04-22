@@ -583,3 +583,5 @@ class Droplet(BaseAPI):
 
     def __str__(self):
         return "%s %s" % (self.id, self.name)
+
+    __repr__ = __str__
